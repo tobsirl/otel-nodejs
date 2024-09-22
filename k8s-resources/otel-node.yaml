@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-node
+  labels:
+    app: otel-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otel-node
+  template:
+    metadata:
+      labels:
+        app: otel-node
+    spec:
+      containers:
+        - name: otel-node
+          image: tobsirl/otel-node:latest
+          ports:
+            - containerPort: 8080
