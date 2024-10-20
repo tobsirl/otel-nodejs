@@ -34,5 +34,6 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 8080
 
-# Run the application.
-CMD ["node", "app.js"]
+# Run the using this node --require ./instrumentation.js app.js command.
+CMD ["node", "--require", "./instrumentation.js", "app.js"]
+
